@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://0irw44pnsjjq"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_3xkhe"]
+[ext_resource type="Texture2D" uid="uid://bo8kweg7qfstl" path="res://Sprites/Jellyfish/jellyfish idle.png" id="2_loxl5"]
+[ext_resource type="Texture2D" uid="uid://bweb27opcu0rr" path="res://Sprites/Jellyfish/jellyfish walk1.png" id="3_qq0q4"]
+[ext_resource type="Texture2D" uid="uid://b3siyp70m2iao" path="res://Sprites/Jellyfish/jellyfish walk2.png" id="4_3knrb"]
+[ext_resource type="Texture2D" uid="uid://p54u7je4ri8t" path="res://Sprites/Jellyfish/jellyfish walk3.png" id="5_e4auv"]
+[ext_resource type="Texture2D" uid="uid://d0prbj1l6u63s" path="res://Sprites/Jellyfish/jellyfish walk4.png" id="6_t1mto"]
+[ext_resource type="Texture2D" uid="uid://brfincnd2qrxm" path="res://Sprites/Jellyfish/jellyfish walk5.png" id="7_4swcp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rnc70"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_loxl5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_loxl5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qq0q4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3knrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e4auv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_t1mto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4swcp")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_3xkhe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(380, 323)
+scale = Vector2(4.22727, 3.01667)
+sprite_frames = SubResource("SpriteFrames_rnc70")
+animation = &"walk"
+frame_progress = 0.270191
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(399, 312, 399, 305, 393, 304, 392, 300, 368, 300, 368, 303, 364, 303, 364, 305, 361, 305, 361, 319, 367, 320, 367, 324, 369, 326, 369, 337, 372, 337, 376, 339, 379, 339, 381, 344, 382, 345, 387, 345, 389, 342, 392, 341, 392, 326, 393, 324, 396, 324, 397, 323, 397, 320, 399, 320)

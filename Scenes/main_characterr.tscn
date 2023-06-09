@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://b85880n0jno2s"]
+
+[ext_resource type="Script" path="res://Scripts/Main_Character.gd" id="1_arhiq"]
+[ext_resource type="Texture2D" uid="uid://dpw61atkxbqvw" path="res://Sprites/АКВАman.png" id="2_k51yg"]
+[ext_resource type="Script" path="res://Scripts/HitBox.gd" id="3_vh8k4"]
+
+[node name="Main_Character" type="CharacterBody2D"]
+position = Vector2(578, 284)
+script = ExtResource("1_arhiq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(27, 45)
+scale = Vector2(2, 1.898)
+texture = ExtResource("2_k51yg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 32)
+zoom = Vector2(1.5, 1.5)
+
+[node name="HitBox" type="Area2D" parent="."]
+script = ExtResource("3_vh8k4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox"]
+polygon = PackedVector2Array(21, 12, 32, 12, 34, 12, 33, 13, 37, 13, 38, 14, 39, 16, 39, 18, 40, 19, 40, 23, 43, 23, 43, 33, 41, 33, 41, 34, 39, 34, 39, 37, 40, 38, 41, 38, 41, 39, 42, 40, 43, 40, 43, 43, 42, 42, 41, 43, 37, 43, 37, 45, 40, 45, 41, 45, 42, 46, 42, 47, 43, 47, 43, 53, 41, 53, 41, 55, 37, 55, 37, 56, 39, 58, 39, 60, 37, 61, 37, 62, 39, 63, 39, 72, 41, 72, 41, 73, 43, 74, 43, 77, 41, 77, 41, 78, 27, 78, 27, 76, 14, 76, 13, 75, 14, 74, 15, 74, 14, 73, 14, 66, 16, 66, 16, 62, 18, 62, 18, 60, 14, 60, 14, 56, 12, 56, 12, 47, 14, 47, 14, 44, 14, 43, 12, 42, 12, 40, 15, 39, 12, 38, 12, 31, 11, 31, 11, 20, 12, 20, 13, 19, 14, 18, 14, 17, 16, 17, 16, 15, 18, 15, 18, 13, 20, 13, 20, 12)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(21, 12, 32, 12, 34, 12, 33, 13, 37, 13, 38, 14, 39, 16, 39, 18, 40, 19, 40, 23, 43, 23, 43, 33, 41, 33, 41, 34, 39, 34, 39, 37, 40, 38, 41, 38, 41, 39, 42, 40, 43, 40, 43, 43, 42, 42, 41, 43, 37, 43, 37, 45, 40, 45, 41, 45, 42, 46, 42, 47, 43, 47, 43, 53, 41, 53, 41, 55, 37, 55, 37, 56, 39, 58, 39, 60, 37, 61, 37, 62, 39, 63, 39, 72, 41, 72, 41, 73, 43, 74, 43, 77, 41, 77, 41, 78, 27, 78, 27, 76, 14, 76, 13, 75, 14, 74, 15, 74, 14, 73, 14, 66, 16, 66, 16, 62, 18, 62, 18, 60, 14, 60, 14, 56, 12, 56, 12, 47, 14, 47, 14, 44, 14, 43, 12, 42, 12, 40, 15, 39, 12, 38, 12, 31, 11, 31, 11, 20, 12, 20, 13, 19, 14, 18, 14, 17, 16, 17, 16, 15, 18, 15, 18, 13, 20, 13, 20, 12)
+
+[connection signal="body_entered" from="HitBox" to="HitBox" method="_on_body_entered"]

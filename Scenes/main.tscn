@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=3 uid="uid://235ft1xanvym"]
+
+[ext_resource type="Texture2D" uid="uid://bm3pc7fur2c7b" path="res://Sprites/sand1.png" id="3_cea5s"]
+[ext_resource type="PackedScene" uid="uid://b85880n0jno2s" path="res://Scenes/main_characterr.tscn" id="3_wif42"]
+[ext_resource type="Theme" uid="uid://bj0vn0sclj55g" path="res://Sprites/Themes/h2o_theme.tres" id="4_k4y8b"]
+[ext_resource type="Script" path="res://Scripts/ProgressBar.gd" id="4_q6tt2"]
+[ext_resource type="PackedScene" uid="uid://0irw44pnsjjq" path="res://Scenes/enemy.tscn" id="5_vfdg2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ho4kn"]
+texture = ExtResource("3_cea5s")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_svkfg"]
+physics_layer_0/collision_layer = 1
+sources/3 = SubResource("TileSetAtlasSource_ho4kn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2u6ci"]
+bg_color = Color(0.584314, 0.729412, 1, 1)
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.0745098, 0.317647, 0.305882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ieueg"]
+bg_color = Color(0.203922, 0.368627, 0.968627, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(0.0745098, 0.317647, 0.305882, 1)
+
+[node name="Main" type="Node2D"]
+position = Vector2(-3, 6)
+
+[node name="Main_Character" parent="." instance=ExtResource("3_wif42")]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_svkfg")
+format = 2
+layer_0/tile_data = PackedInt32Array(1572887, 65539, 1, 1638423, 65539, 1, 1703959, 65539, 1, 1769495, 65539, 1, 1835031, 65539, 1, 1900567, 65539, 1, 1572888, 65539, 1, 1638424, 65539, 1, 1703960, 65539, 1, 1769496, 65539, 1, 1835032, 65539, 1, 1900568, 65539, 1, 1572889, 65539, 1, 1638425, 65539, 1, 1703961, 65539, 1, 1769497, 65539, 1, 1835033, 65539, 1, 1900569, 65539, 1, 1572890, 65539, 1, 1638426, 65539, 1, 1703962, 65539, 1, 1769498, 65539, 1, 1835034, 65539, 1, 1900570, 65539, 1, 1572891, 65539, 1, 1638427, 65539, 1, 1703963, 65539, 1, 1769499, 65539, 1, 1835035, 65539, 1, 1900571, 65539, 1, 1572892, 65539, 1, 1638428, 65539, 1, 1703964, 65539, 1, 1769500, 65539, 1, 1835036, 65539, 1, 1900572, 65539, 1, 1572893, 65539, 1, 1638429, 65539, 1, 1703965, 65539, 1, 1769501, 65539, 1, 1835037, 65539, 1, 1900573, 65539, 1, 1572894, 65539, 1, 1638430, 65539, 1, 1703966, 65539, 1, 1769502, 65539, 1, 1835038, 65539, 1, 1900574, 65539, 1, 1572895, 65539, 1, 1638431, 65539, 1, 1703967, 65539, 1, 1769503, 65539, 1, 1835039, 65539, 1, 1900575, 65539, 1, 1572896, 65539, 1, 1638432, 65539, 1, 1703968, 65539, 1, 1769504, 65539, 1, 1835040, 65539, 1, 1900576, 65539, 1, 1572897, 65539, 1, 1638433, 65539, 1, 1703969, 65539, 1, 1769505, 65539, 1, 1835041, 65539, 1, 1900577, 65539, 1, 1572898, 65539, 1, 1638434, 65539, 1, 1703970, 65539, 1, 1769506, 65539, 1, 1835042, 65539, 1, 1900578, 65539, 1, 1572899, 65539, 1, 1638435, 65539, 1, 1703971, 65539, 1, 1769507, 65539, 1, 1835043, 65539, 1, 1900579, 65539, 1, 1572900, 65539, 1, 1638436, 65539, 1, 1703972, 65539, 1, 1769508, 65539, 1, 1835044, 65539, 1, 1900580, 65539, 1, 1572901, 65539, 1, 1638437, 65539, 1, 1703973, 65539, 1, 1769509, 65539, 1, 1835045, 65539, 1, 1900581, 65539, 1, 1572902, 65539, 1, 1638438, 65539, 1, 1703974, 65539, 1, 1769510, 65539, 1, 1835046, 65539, 1, 1900582, 65539, 1, 1572903, 65539, 1, 1638439, 65539, 1, 1703975, 65539, 1, 1769511, 65539, 1, 1835047, 65539, 1, 1900583, 65539, 1, 1572904, 65539, 1, 1638440, 65539, 1, 1703976, 65539, 1, 1769512, 65539, 1, 1835048, 65539, 1, 1900584, 65539, 1, 1572905, 65539, 1, 1638441, 65539, 1, 1703977, 65539, 1, 1769513, 65539, 1, 1835049, 65539, 1, 1900585, 65539, 1, 1572906, 65539, 1, 1638442, 65539, 1, 1703978, 65539, 1, 1769514, 65539, 1, 1835050, 65539, 1, 1900586, 65539, 1, 1572907, 65539, 1, 1638443, 65539, 1, 1703979, 65539, 1, 1769515, 65539, 1, 1835051, 65539, 1, 1900587, 65539, 1, 1572908, 65539, 1, 1638444, 65539, 1, 1703980, 65539, 1, 1769516, 65539, 1, 1835052, 65539, 1, 1900588, 65539, 1, 1572909, 65539, 1, 1638445, 65539, 1, 1703981, 65539, 1, 1769517, 65539, 1, 1835053, 65539, 1, 1900589, 65539, 1, 1572910, 65539, 1, 1638446, 65539, 1, 1703982, 65539, 1, 1769518, 65539, 1, 1835054, 65539, 1, 1900590, 65539, 1, 1572911, 65539, 1, 1638447, 65539, 1, 1703983, 65539, 1, 1769519, 65539, 1, 1835055, 65539, 1, 1900591, 65539, 1, 1572912, 65539, 1, 1638448, 65539, 1, 1703984, 65539, 1, 1769520, 65539, 1, 1835056, 65539, 1, 1900592, 65539, 1, 1572913, 65539, 1, 1638449, 65539, 1, 1703985, 65539, 1, 1769521, 65539, 1, 1835057, 65539, 1, 1900593, 65539, 1, 1572914, 65539, 1, 1638450, 65539, 1, 1703986, 65539, 1, 1769522, 65539, 1, 1835058, 65539, 1, 1900594, 65539, 1, 1572915, 65539, 1, 1638451, 65539, 1, 1703987, 65539, 1, 1769523, 65539, 1, 1835059, 65539, 1, 1900595, 65539, 1, 1507371, 65539, 1)
+
+[node name="Enemy" parent="." instance=ExtResource("5_vfdg2")]
+position = Vector2(-1, -1)
+
+[node name="h2oBar" type="ProgressBar" parent="."]
+offset_left = 239.0
+offset_top = 159.0
+offset_right = 548.0
+offset_bottom = 186.0
+theme = ExtResource("4_k4y8b")
+theme_override_styles/background = SubResource("StyleBoxFlat_2u6ci")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ieueg")
+value = 100.0
+show_percentage = false
+script = ExtResource("4_q6tt2")
+
+[node name="Timer" type="Timer" parent="h2oBar"]
+
+[connection signal="timeout" from="h2oBar/Timer" to="h2oBar" method="_on_timer_timeout"]

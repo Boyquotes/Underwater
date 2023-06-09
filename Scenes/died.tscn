@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlrg5cqre1wnc"]
+
+[ext_resource type="Texture2D" uid="uid://cst3hvl4smsvb" path="res://Sprites/dead_pic_test.png" id="1_b4mkq"]
+
+[node name="Died" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(577, 324)
+scale = Vector2(1.65517, 1.15248)
+texture = ExtResource("1_b4mkq")
